@@ -13,3 +13,7 @@ INSERT INTO menfess (sender, content, color) VALUES
 ('Admin Ganteng', 'Selamat datang di Tekser Menfess! Silakan tumpahkan isi hati kalian di sini. Keep it sopan ya gaes!', 'bg-blue-100'),
 ('Maba Tersesat', 'Kak, gedung C sebelah mana ya? Kok aku muter-muter nemunya kantin doang...', 'bg-yellow-100'),
 ('Pejuang Skripsi', 'Info dosen pembimbing yang fast respon dong...', 'bg-red-100');
+
+ALTER TABLE menfess
+ADD COLUMN likes INT DEFAULT 0,
+ADD COLUMN dislikes INT DEFAULT 0;

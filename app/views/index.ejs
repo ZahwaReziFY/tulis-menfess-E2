@@ -71,6 +71,14 @@
           </div>
         </div>
         <% }) %>
+        <div class="flex justify-end space-x-2 mt-2">
+    <form action="/like/<%= menfess.id %>" method="POST">
+        <button type="submit" class="hover:text-green-500">👍 <%= menfess.likes %></button>
+    </form>
+    <form action="/dislike/<%= menfess.id %>" method="POST">
+        <button type="submit" class="hover:text-red-500">👎 <%= menfess.dislikes %></button>
+    </form>
+</div>
       </div>
 
       <% } else { %>

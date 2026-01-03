@@ -15,6 +15,21 @@ router.get("/", async (req, res) => {
   }
 });
 
+// Like
+router.post('/like/:id', async (req, res) => {
+    const id = req.params.id;
+    await db.query('UPDATE menfess SET likes = likes + 1 WHERE id = ?', [id]);
+    res.redirect('/');
+});
+
+// Dislike
+router.post('/dislike/:id', async (req, res) => {
+    const id = req.params.id;
+    await db.query('UPDATE menfess SET dislikes = dislikes + 1 WHERE id = ?', [id]);
+    res.redirect('/');
+});
+
+
 // Halaman Create Menfess
 router.get("/create", (req, res) => {
   res.render("create");
